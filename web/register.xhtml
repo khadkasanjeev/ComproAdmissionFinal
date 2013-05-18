@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+      <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>Applicant Registration Form</h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <p:messages/>
+                <p:panel header="Please Enter Your Registration Information.
+                         Your Password will be emailed to you.">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel for="firstName" value="First Name" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="firstName" label="First Name" 
+                                     value="#{regMB.firstName}" 
+                                     required="true"/>
+                        <h:outputLabel for="middleName" value="Middle Name" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="middleName" label="Middle Name" 
+                                     value="#{regMB.middleName}"/>
+                        <h:outputLabel for="lastName" value="Last Name" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="lastName" label="Last Name" 
+                                     value="#{regMB.lastName}" 
+                                     required="true"/>
+                        <h:outputLabel for="emailAddr" value="Email Address" 
+                                       styleClass="requiredLbl"/>
+                        <h:inputText id="emailAddr" label="Email Address" 
+                                     value="#{regMB.emailAddr}" 
+                                     required="true"/>
+                        <h:panelGroup/>
+                        <p:commandButton 
+                            value="Submit" 
+                            action ="#{regMB.saveRegInfo}" 
+                            ajax="false"/>
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>
+

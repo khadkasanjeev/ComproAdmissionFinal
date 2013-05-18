@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="top">
+                <h2>Applicant Registration Form</h2>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form id="form">
+                    <h:panelGrid columns="1" style="width: 100%">
+                        <p:wizard id="wizard">
+
+                             <!-- Personal Information -->
+                            <p:tab title="Personal Information" id="personalInfo">
+                                <p:panel header="Personal Information">
+                                    <p:messages/>
+                                    <h:panelGrid columns="2">
+
+                                        <h:outputLabel for="personalfName" 
+                                                       value="First Name" 
+                                                       styleClass="requiredLbl"/>
+                                        <h:inputText id="personalfName" 
+                                                     label="First Name" 
+                                                     value="#{applicationMB.personalfirstName}" 
+                                                     required="true"/>
+                                        <h:outputLabel for="personalmName" 
+                                                       value="Middle Name" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:inputText id="personalmName" 
+                                                     label="Middle Name" 
+                                                     value="#{applicationMB.personalmiddleName}"
+                                                     />
+                                        <h:outputLabel for="personallName" 
+                                                       value="Last Name" 
+                                                       styleClass="requiredLbl"/>
+                                        <h:inputText id="personallName" label="Last Name" 
+                                                     value="#{applicationMB.personallastName}" 
+                                                     required="true"/>
+                                        <h:outputLabel for="sex" 
+                                                       value="Sex" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="sex" value="#{applicationMB.personalsex}">
+                                            <f:selectItem id="male" itemLabel="Male" itemValue="1" />
+                                            <f:selectItem id="female" itemLabel="Female" itemValue="2" />
+                                        </h:selectOneMenu>
+                                        <h:outputLabel for="personalmStatus" 
+                                                       value="Marital Status" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="personalmStatus" value="#{applicationMB.personalmaritalStatus}">
+                                            <f:selectItem id="single" itemLabel="Single" itemValue="1" />
+                                            <f:selectItem id="married" itemLabel="Married" itemValue="2" />
+                                        </h:selectOneMenu>
+
+                                        <h:outputLabel for="countryofCitizenship" 
+                                                       value="Country of Citizenship" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="countryofCitizenship" value="#{applicationMB.personalcountryOfCitizenship}">
+
+
+                                            <f:selectItem id="pleaseselect" itemLabel="Please Select" itemValue="1" />
+                                            <f:selectItem id="afghanistan" itemLabel="Afghanistan" itemValue="2" />
+                                            <f:selectItem id="albania" itemLabel="Albania" itemValue="3" />
+                                            <f:selectItem id="algeria" itemLabel="Algeria" itemValue="4" />
+                                            <f:selectItem id="americansamoa" itemLabel="American Samoa" itemValue="5" />
+                                            <f:selectItem id="andorra" itemLabel="Andorra" itemValue="6" />
+                                            <f:selectItem id="angola" itemLabel="Angola" itemValue="7" />
+                                            <f:selectItem id="anguilla" itemLabel="Anguilla" itemValue="8" />
+                                            <f:selectItem id="antiguaandbarbuda" itemLabel="Antigua and Barbuda" itemValue="9" />
+                                            <f:selectItem id="argentina" itemLabel="Argentina" itemValue="10" />
+                                            <f:selectItem id="armenia" itemLabel="Armenia" itemValue="11" />
+                                            <f:selectItem id="aruba" itemLabel="Aruba" itemValue="12" />
+                                            <f:selectItem id="australia" itemLabel="Australia" itemValue="13" />
+                                            <f:selectItem id="austria" itemLabel="Austria" itemValue="14" />
+                                            <f:selectItem id="azerbaijan" itemLabel="Azerbaijan" itemValue="15" />
+                                            <f:selectItem id="bahamas" itemLabel="Bahamas" itemValue="16" />
+                                            <f:selectItem id="bahrain" itemLabel="Bahrain" itemValue="17" />
+                                            <f:selectItem id="bangladesh" itemLabel="Bangladesh" itemValue="18" />
+                                            <f:selectItem id="barbados" itemLabel="Barbados" itemValue="19" />
+                                            <f:selectItem id="belarus" itemLabel="Belarus" itemValue="20" />
+                                            <f:selectItem id="belgium" itemLabel="Belgium" itemValue="21" />
+                                            <f:selectItem id="belize" itemLabel="Belize" itemValue="22" />
+                                            <f:selectItem id="benin" itemLabel="Benin" itemValue="23" />
+                                            <f:selectItem id="bermuda" itemLabel="Bermuda" itemValue="24" />
+                                            <f:selectItem id="bhutan" itemLabel="Bhutan" itemValue="25" />
+                                            <f:selectItem id="bolivia" itemLabel="Bolivia" itemValue="26" />
+                                            <f:selectItem id="bosnia" itemLabel="Bosnia" itemValue="27" />
+                                            <f:selectItem id="botswana" itemLabel="Botswana" itemValue="28" />
+                                            <f:selectItem id="bougainville" itemLabel="Bougainville" itemValue="29" />
+                                            <f:selectItem id="brazil" itemLabel="Brazil" itemValue="30" />
+                                            <f:selectItem id="britishindianocean" itemLabel="British Indian Ocean" itemValue="31" />
+                                            <f:selectItem id="britishvirginislands" itemLabel="British Virgin Islands" itemValue="32" />
+                                            <f:selectItem id="brunei" itemLabel="Brunei" itemValue="33" />
+                                            <f:selectItem id="bulgaria" itemLabel="Bulgaria" itemValue="34" />
+                                            <f:selectItem id="burkinafaso" itemLabel="Burkina Faso" itemValue="35" />
+                                            <f:selectItem id="burundi" itemLabel="Burundi" itemValue="36" />
+                                            <f:selectItem id="cambodia" itemLabel="Cambodia" itemValue="37" />
+                                            <f:selectItem id="cameroon" itemLabel="Cameroon" itemValue="38" />
+                                            <f:selectItem id="canada" itemLabel="Canada" itemValue="39" />
+                                            <f:selectItem id="capeverdeislands" itemLabel="Cape Verde Islands" itemValue="40" />
+                                            <f:selectItem id="caymanislands" itemLabel="Cayman Islands" itemValue="41" />
+                                            <f:selectItem id="centralafricanrepublic" itemLabel="Central African Republic" itemValue="42" />
+                                            <f:selectItem id="chad" itemLabel="Chad" itemValue="43" />
+                                            <f:selectItem id="chile" itemLabel="Chile" itemValue="44" />
+                                            <f:selectItem id="china" itemLabel="China" itemValue="45" />
+                                            <f:selectItem id="macau" itemLabel="Macau" itemValue="46" />
+                                            <f:selectItem id="taiwan" itemLabel="Taiwan" itemValue="47" />
+                                            <f:selectItem id="colombia" itemLabel="Colombia" itemValue="48" />
+                                            <f:selectItem id="comoros" itemLabel="Comoros" itemValue="49" />
+                                            <f:selectItem id="congo" itemLabel="Congo" itemValue="50" />
+                                            <f:selectItem id="republicofcookislands" itemLabel="Republic of Cook Islands" itemValue="51" />
+                                            <f:selectItem id="costarica" itemLabel="Costa Rica" itemValue="52" />
+                                            <f:selectItem id="cotedivoire" itemLabel="Cote d Ivoire" itemValue="53" />
+                                            <f:selectItem id="croatia" itemLabel="Croatia" itemValue="54" />
+                                            <f:selectItem id="cuba" itemLabel="Cuba" itemValue="55" />
+                                            <f:selectItem id="cyprus" itemLabel="Cyprus" itemValue="56" />
+                                            <f:selectItem id="czechrepublic" itemLabel="Czech Republic" itemValue="57" />
+                                            <f:selectItem id="denmark" itemLabel="Denmark" itemValue="58" />
+                                            <f:selectItem id="djibouti" itemLabel="Djibouti" itemValue="59" />
+                                            <f:selectItem id="dominica" itemLabel="Dominica" itemValue="60" />
+                                            <f:selectItem id="dominicanrepublic" itemLabel="Dominican Republic" itemValue="61" />
+                                            <f:selectItem id="ecuador" itemLabel="Ecuador" itemValue="62" />
+                                            <f:selectItem id="egypt" itemLabel="Egypt" itemValue="63" />
+                                            <f:selectItem id="elsalvador" itemLabel="El Salvador" itemValue="64" />
+                                            <f:selectItem id="equatorialguinea" itemLabel="Equatorial Guinea" itemValue="65" />
+                                            <f:selectItem id="eritrea" itemLabel="Eritrea" itemValue="66" />
+                                            <f:selectItem id="estonia" itemLabel="Estonia" itemValue="67" />
+                                            <f:selectItem id="ethiopia" itemLabel="Ethiopia" itemValue="68" />
+                                            <f:selectItem id="faeroeislands" itemLabel="Faeroe Islands" itemValue="69" />
+                                            <f:selectItem id="falklandislands" itemLabel="Falkland Islands" itemValue="70" />
+                                            <f:selectItem id="federatedstatesofmicronesia" itemLabel="Federated States of Micronesia" itemValue="71" />
+                                            <f:selectItem id="fiji" itemLabel="Fiji" itemValue="72" />
+                                            <f:selectItem id="finland" itemLabel="Finland" itemValue="73" />
+                                            <f:selectItem id="france" itemLabel="France" itemValue="74" />
+                                            <f:selectItem id="frenchguiana" itemLabel="French Guiana" itemValue="75" />
+                                            <f:selectItem id="frenchpolynesia" itemLabel="French Polynesia" itemValue="76" />
+                                            <f:selectItem id="gabon" itemLabel="Gabon" itemValue="77" />
+                                            <f:selectItem id="gambia" itemLabel="Gambia" itemValue="78" />
+                                            <f:selectItem id="the" itemLabel="The" itemValue="79" />
+                                            <f:selectItem id="georgia" itemLabel="Georgia" itemValue="80" />
+                                            <f:selectItem id="germany" itemLabel="Germany" itemValue="81" />
+                                            <f:selectItem id="ghana" itemLabel="Ghana" itemValue="82" />
+                                            <f:selectItem id="gibraltar" itemLabel="Gibraltar" itemValue="83" />
+                                            <f:selectItem id="greece" itemLabel="Greece" itemValue="84" />
+                                            <f:selectItem id="greenland" itemLabel="Greenland" itemValue="85" />
+                                            <f:selectItem id="grenada" itemLabel="Grenada" itemValue="86" />
+                                            <f:selectItem id="guadeloupe" itemLabel="Guadeloupe" itemValue="87" />
+                                            <f:selectItem id="guam" itemLabel="Guam" itemValue="88" />
+                                            <f:selectItem id="guatemala" itemLabel="Guatemala" itemValue="89" />
+                                            <f:selectItem id="guinea" itemLabel="Guinea" itemValue="90" />
+                                            <f:selectItem id="guinea-bissau" itemLabel="Guinea-Bissau" itemValue="91" />
+                                            <f:selectItem id="guyana" itemLabel="Guyana" itemValue="92" />
+                                            <f:selectItem id="haiti" itemLabel="Haiti" itemValue="93" />
+                                            <f:selectItem id="holyseevaticancitystate" itemLabel="Holy See (Vatican City State)" itemValue="94" />
+                                            <f:selectItem id="honduras" itemLabel="Honduras" itemValue="95" />
+                                            <f:selectItem id="hungary" itemLabel="Hungary" itemValue="96" />
+                                            <f:selectItem id="iceland" itemLabel="Iceland" itemValue="97" />
+                                            <f:selectItem id="india" itemLabel="India" itemValue="98" />
+                                            <f:selectItem id="indonesia" itemLabel="Indonesia" itemValue="99" />
+                                            <f:selectItem id="iran" itemLabel="Iran" itemValue="100" />
+                                            <f:selectItem id="iraq" itemLabel="Iraq" itemValue="101" />
+                                            <f:selectItem id="ireland" itemLabel="Ireland" itemValue="102" />
+                                            <f:selectItem id="israel" itemLabel="Israel" itemValue="103" />
+                                            <f:selectItem id="italy" itemLabel="Italy" itemValue="104" />
+                                            <f:selectItem id="jamaica" itemLabel="Jamaica" itemValue="105" />
+                                            <f:selectItem id="japan" itemLabel="Japan" itemValue="106" />
+                                            <f:selectItem id="jordan" itemLabel="Jordan" itemValue="107" />
+                                            <f:selectItem id="kazakhstan" itemLabel="Kazakhstan" itemValue="108" />
+                                            <f:selectItem id="kenya" itemLabel="Kenya" itemValue="109" />
+                                            <f:selectItem id="kiribati" itemLabel="Kiribati" itemValue="110" />
+                                            <f:selectItem id="korea" itemLabel="Korea" itemValue="111" />
+                                            <f:selectItem id="democraticpeoplesrepkorea" itemLabel="Democratic Peoples Rep Korea" itemValue="112" />
+                                            <f:selectItem id="republicofkosovo" itemLabel="Republic of Kosovo" itemValue="113" />
+                                            <f:selectItem id="kuwait" itemLabel="Kuwait" itemValue="114" />
+                                            <f:selectItem id="kyrgyzstan" itemLabel="Kyrgyzstan" itemValue="115" />
+                                            <f:selectItem id="laos" itemLabel="Laos" itemValue="116" />
+                                            <f:selectItem id="latvia" itemLabel="Latvia" itemValue="117" />
+                                            <f:selectItem id="lebanon" itemLabel="Lebanon" itemValue="118" />
+                                            <f:selectItem id="lesotho" itemLabel="Lesotho" itemValue="119" />
+                                            <f:selectItem id="liberia" itemLabel="Liberia" itemValue="120" />
+                                            <f:selectItem id="libya" itemLabel="Libya" itemValue="121" />
+                                            <f:selectItem id="liechtenstein" itemLabel="Liechtenstein" itemValue="122" />
+                                            <f:selectItem id="lithuania" itemLabel="Lithuania" itemValue="123" />
+                                            <f:selectItem id="luxembourg" itemLabel="Luxembourg" itemValue="124" />
+                                            <f:selectItem id="macedonia" itemLabel="Macedonia" itemValue="125" />
+                                            <f:selectItem id="madagascar" itemLabel="Madagascar" itemValue="126" />
+                                            <f:selectItem id="malawi" itemLabel="Malawi" itemValue="127" />
+                                            <f:selectItem id="malaysia" itemLabel="Malaysia" itemValue="128" />
+                                            <f:selectItem id="maldives" itemLabel="Maldives" itemValue="129" />
+                                            <f:selectItem id="mali" itemLabel="Mali" itemValue="130" />
+                                            <f:selectItem id="malta" itemLabel="Malta" itemValue="131" />
+                                            <f:selectItem id="martinique" itemLabel="Martinique" itemValue="132" />
+                                            <f:selectItem id="mauritania" itemLabel="Mauritania" itemValue="133" />
+                                            <f:selectItem id="mauritius" itemLabel="Mauritius" itemValue="134" />
+                                            <f:selectItem id="mayotte" itemLabel="Mayotte" itemValue="135" />
+                                            <f:selectItem id="mexico" itemLabel="Mexico" itemValue="136" />
+                                            <f:selectItem id="moldova" itemLabel="Moldova" itemValue="137" />
+                                            <f:selectItem id="monaco" itemLabel="Monaco" itemValue="138" />
+                                            <f:selectItem id="mongolia" itemLabel="Mongolia" itemValue="139" />
+                                            <f:selectItem id="montenegro" itemLabel="Montenegro" itemValue="140" />
+                                            <f:selectItem id="montserrat" itemLabel="Montserrat" itemValue="141" />
+                                            <f:selectItem id="moroccomozambique" itemLabel="Morocco Mozambique" itemValue="142" />
+                                            <f:selectItem id="myanmar" itemLabel="Myanmar" itemValue="143" />
+                                            <f:selectItem id="namibia" itemLabel="Namibia" itemValue="144" />
+                                            <f:selectItem id="nauru" itemLabel="Nauru" itemValue="145" />
+                                            <f:selectItem id="nepal" itemLabel="Nepal" itemValue="146" />
+                                            <f:selectItem id="netherlands" itemLabel="Netherlands" itemValue="147" />
+                                            <f:selectItem id="netherlandsantilles" itemLabel="Netherlands Antilles" itemValue="148" />
+                                            <f:selectItem id="newcaledonia" itemLabel="New Caledonia" itemValue="149" />
+                                            <f:selectItem id="newzealand" itemLabel="New Zealand" itemValue="150" />
+                                            <f:selectItem id="nicaragua" itemLabel="Nicaragua" itemValue="151" />
+                                            <f:selectItem id="niger" itemLabel="Niger" itemValue="152" />
+                                            <f:selectItem id="nigeria" itemLabel="Nigeria" itemValue="153" />
+                                            <f:selectItem id="norway" itemLabel="Norway" itemValue="154" />
+                                            <f:selectItem id="oman" itemLabel="Oman" itemValue="155" />
+                                            <f:selectItem id="pakistan" itemLabel="Pakistan" itemValue="156" />
+                                            <f:selectItem id="palestine" itemLabel="Palestine" itemValue="157" />
+                                            <f:selectItem id="panama" itemLabel="Panama" itemValue="158" />
+                                            <f:selectItem id="papuanewguinea" itemLabel="Papua New Guinea" itemValue="159" />
+                                            <f:selectItem id="paraguay" itemLabel="Paraguay" itemValue="160" />
+                                            <f:selectItem id="peru" itemLabel="Peru" itemValue="161" />
+                                            <f:selectItem id="philippines" itemLabel="Philippines" itemValue="162" />
+                                            <f:selectItem id="poland" itemLabel="Poland" itemValue="163" />
+                                            <f:selectItem id="portugal" itemLabel="Portugal" itemValue="164" />
+                                            <f:selectItem id="puertorico" itemLabel="Puerto Rico" itemValue="165" />
+                                            <f:selectItem id="qatar" itemLabel="Qatar" itemValue="166" />
+                                            <f:selectItem id="réunion" itemLabel="Réunion" itemValue="167" />
+                                            <f:selectItem id="romania" itemLabel="Romania" itemValue="168" />
+                                            <f:selectItem id="russia" itemLabel="Russia" itemValue="169" />
+                                            <f:selectItem id="rwanda" itemLabel="Rwanda" itemValue="170" />
+                                            <f:selectItem id="saintbarthelemy" itemLabel="Saint Barthelemy" itemValue="171" />
+                                            <f:selectItem id="sainthelena" itemLabel="Saint Helena" itemValue="172" />
+                                            <f:selectItem id="saintkittsandnevis" itemLabel="Saint Kitts And Nevis" itemValue="173" />
+                                            <f:selectItem id="saintlucia" itemLabel="Saint Lucia" itemValue="174" />
+                                            <f:selectItem id="saintmartin" itemLabel="Saint Martin" itemValue="175" />
+                                            <f:selectItem id="saintpierreandmiquelon" itemLabel="Saint Pierre And Miquelon" itemValue="176" />
+                                            <f:selectItem id="saintvincent" itemLabel="Saint Vincent" itemValue="177" />
+                                            <f:selectItem id="samoa" itemLabel="Samoa" itemValue="178" />
+                                            <f:selectItem id="sanmarino" itemLabel="San Marino" itemValue="179" />
+                                            <f:selectItem id="saotoméandprincipe" itemLabel="Sao Tomé And Principe" itemValue="180" />
+                                            <f:selectItem id="saudiarabia" itemLabel="Saudi Arabia" itemValue="181" />
+                                            <f:selectItem id="senegal" itemLabel="Senegal" itemValue="182" />
+                                            <f:selectItem id="serbia" itemLabel="Serbia" itemValue="183" />
+                                            <f:selectItem id="seychelles" itemLabel="Seychelles" itemValue="184" />
+                                            <f:selectItem id="sierraleone" itemLabel="Sierra Leone" itemValue="185" />
+                                            <f:selectItem id="singapore" itemLabel="Singapore" itemValue="186" />
+                                            <f:selectItem id="slovakia" itemLabel="Slovakia" itemValue="187" />
+                                            <f:selectItem id="slovenia" itemLabel="Slovenia" itemValue="188" />
+                                            <f:selectItem id="solomonislands" itemLabel="Solomon Islands" itemValue="189" />
+                                            <f:selectItem id="somalia" itemLabel="Somalia" itemValue="190" />
+                                            <f:selectItem id="southafrica" itemLabel="South Africa" itemValue="191" />
+                                            <f:selectItem id="spain" itemLabel="Spain" itemValue="192" />
+                                            <f:selectItem id="srilanka" itemLabel="Sri Lanka" itemValue="193" />
+                                            <f:selectItem id="sudan" itemLabel="Sudan" itemValue="194" />
+                                            <f:selectItem id="suriname" itemLabel="Suriname" itemValue="195" />
+                                            <f:selectItem id="swaziland" itemLabel="Swaziland" itemValue="196" />
+                                            <f:selectItem id="sweden" itemLabel="Sweden" itemValue="197" />
+                                            <f:selectItem id="switzerland" itemLabel="Switzerland" itemValue="198" />
+                                            <f:selectItem id="syria" itemLabel="Syria" itemValue="199" />
+                                            <f:selectItem id="tajikistan" itemLabel="Tajikistan" itemValue="200" />
+                                            <f:selectItem id="tanzania" itemLabel="Tanzania" itemValue="201" />
+                                            <f:selectItem id="thailand" itemLabel="Thailand" itemValue="202" />
+                                            <f:selectItem id="timorleste" itemLabel="Timor Leste" itemValue="203" />
+                                            <f:selectItem id="togo" itemLabel="Togo" itemValue="204" />
+                                            <f:selectItem id="tokelauislands" itemLabel="Tokelau Islands" itemValue="205" />
+                                            <f:selectItem id="tonga" itemLabel="Tonga" itemValue="206" />
+                                            <f:selectItem id="trinidadandtobago" itemLabel="Trinidad And Tobago" itemValue="207" />
+                                            <f:selectItem id="tunisia" itemLabel="Tunisia" itemValue="208" />
+                                            <f:selectItem id="turkey" itemLabel="Turkey" itemValue="209" />
+                                            <f:selectItem id="turkmenistan" itemLabel="Turkmenistan" itemValue="210" />
+                                            <f:selectItem id="turksandcaicosislands" itemLabel="Turks And Caicos Islands" itemValue="211" />
+                                            <f:selectItem id="tuvalu" itemLabel="Tuvalu" itemValue="212" />
+                                            <f:selectItem id="uganda" itemLabel="Uganda" itemValue="213" />
+                                            <f:selectItem id="ukraine" itemLabel="Ukraine" itemValue="214" />
+                                            <f:selectItem id="unitedarabemirates" itemLabel="United Arab Emirates" itemValue="215" />
+                                            <f:selectItem id="unitedkingdomofgbandni" itemLabel="United Kingdom of GB And NI" itemValue="216" />
+                                            <f:selectItem id="unitedstatesofamerica" itemLabel="United States of America" itemValue="217" />
+                                            <f:selectItem id="uruguay" itemLabel="Uruguay" itemValue="218" />
+                                            <f:selectItem id="usvirginislands" itemLabel="US Virgin Islands" itemValue="219" />
+                                            <f:selectItem id="uzbekistan" itemLabel="Uzbekistan" itemValue="220" />
+                                            <f:selectItem id="vanuatu" itemLabel="Vanuatu" itemValue="221" />
+                                            <f:selectItem id="venezuela" itemLabel="Venezuela" itemValue="222" />
+                                            <f:selectItem id="vietnam" itemLabel="Vietnam" itemValue="223" />
+                                            <f:selectItem id="wallisandfutunaislands" itemLabel="Wallis And Futuna Islands" itemValue="224" />
+                                            <f:selectItem id="yemen" itemLabel="Yemen" itemValue="225" />
+                                            <f:selectItem id="zambia" itemLabel="Zambia" itemValue="226" />
+                                            <f:selectItem id="zimbabwe" itemLabel="Zimbabwe" itemValue="227" />
+
+
+                                        </h:selectOneMenu>
+                                        
+
+
+                                    </h:panelGrid>
+                                </p:panel>
+                            </p:tab>
+
+
+                            <!-- English Proficiency -->
+                            <p:tab title="English Proficiency" id="englishProf">
+                                <p:panel header="English Proficiency">
+                                    <p:messages/>
+                                    <h3>English Fluency</h3>
+                                    <h:panelGrid columns="2">
+                                        <h:outputLabel for="rwEnglish" 
+                                                       value="How well can you read and write English?" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="rwEnglish" value="#{applicationMB.englishrw}">
+                                            <f:selectItem id="englishrw1" itemLabel="Please select" itemValue="1" />
+                                            <f:selectItem id="englishrw2" itemLabel="Barely able to read/write" itemValue="2" />
+                                            <f:selectItem id="englishrw3" itemLabel="Able to read/write basic sentences" itemValue="3" />
+                                            <f:selectItem id="englishrw4" itemLabel="Okay, but with some mistakes" itemValue="4" />
+                                            <f:selectItem id="englishrw5" itemLabel="Like a native speaker" itemValue="5" />
+                                        </h:selectOneMenu>
+                                        <h:outputLabel for="spEnglish" 
+                                                       value="How well do you speak English?" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="spEnglish" value="#{applicationMB.englishsp}">
+                                            <f:selectItem id="englishsp1" itemLabel="Please select" itemValue="1" />
+                                            <f:selectItem id="englishsp2" itemLabel="Barely able to speak" itemValue="2" />
+                                            <f:selectItem id="englishsp3" itemLabel="Able to speak basic sentences" itemValue="3" />
+                                            <f:selectItem id="englishsp4" itemLabel="Okay, but with some mistakes" itemValue="4" />
+                                            <f:selectItem id="englishsp5" itemLabel="Like a native speaker" itemValue="5" />
+                                        </h:selectOneMenu>
+                                        <h:outputLabel for="spoEnglish" 
+                                                       value="How well can you read and write English?" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="spoEnglish" value="#{applicationMB.englishrwo}">
+                                            <f:selectItem id="englishspo1" itemLabel="Please select" itemValue="1" />
+                                            <f:selectItem id="englishspo2" itemLabel="Barely able to understand" itemValue="2" />
+                                            <f:selectItem id="englishspo3" itemLabel="Able to understand basic sentences" itemValue="3" />
+                                            <f:selectItem id="englishspo4" itemLabel="Okay, but with some mistakes" itemValue="4" />
+                                            <f:selectItem id="englishspo5" itemLabel="Like a native speaker" itemValue="5" />
+                                        </h:selectOneMenu>
+
+                                    </h:panelGrid>
+                                </p:panel>
+                            </p:tab>
+
+                            <!-- Educational History -->
+                            <p:tab title="Educational History" id="eduHist">
+                                <p:panel header="Educational History">
+                                    <p:messages/>
+                                    <h3>High School/Secondary Level Education</h3>
+                                    <input id="ygrad" type="radio" name="School" value="OFF"  /> YES, I graduated from high school.
+
+                                    <br/><input id="ngrad" type="radio" name="School" value="OFF"  /> NO, I did not graduate from high school.
+
+                                    <h3>Highest Degree Applicable</h3>
+                                    Please select the degree most applicable to this application 
+                                    <h:panelGrid columns="3">
+                                        <h:outputLabel for="years" 
+                                                       value="Years" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:outputLabel for="field" 
+                                                       value="Field" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:outputLabel for="degree" 
+                                                       value="Degree" 
+                                                       styleClass="optionalLbl"/>
+
+                                        <h:selectOneMenu id="years" value="1">
+                                            <f:selectItem id="years1" itemLabel="None" itemValue="1" />
+                                            <f:selectItem id="years2" itemLabel="1" itemValue="2" />
+                                            <f:selectItem id="years3" itemLabel="2" itemValue="3" />
+                                            <f:selectItem id="years4" itemLabel="3" itemValue="4" />
+                                            <f:selectItem id="years5" itemLabel="4" itemValue="5" />
+                                            <f:selectItem id="years6" itemLabel="5+" itemValue="6" />
+                                        </h:selectOneMenu>
+                                        <h:selectOneMenu id="field" value="1">
+                                            <f:selectItem id="field1" itemLabel="Please Select" itemValue="1" />
+                                            <f:selectItem id="field2" itemLabel="Computer Science" itemValue="2" />
+                                            <f:selectItem id="field3" itemLabel="Electronics Engineering" itemValue="3" />
+                                            <f:selectItem id="field4" itemLabel="Information Technology" itemValue="4" />
+                                            <f:selectItem id="field5" itemLabel="Other" itemValue="5" />
+                                        </h:selectOneMenu>
+                                        <h:selectOneMenu id="degree" value="1">
+                                            <f:selectItem id="degree1" itemLabel="Please Select" itemValue="1" />
+                                            <f:selectItem id="degree2" itemLabel="Undergraduate/Bachelors" itemValue="2" />
+                                            <f:selectItem id="degree3" itemLabel="Graduate/Masters" itemValue="3" />
+                                            <f:selectItem id="degree4" itemLabel="Diploma" itemValue="4" />
+                                            <f:selectItem id="degree5" itemLabel="PHD" itemValue="5" />
+                                            <f:selectItem id="degree6" itemLabel="Other" itemValue="6" /> 
+
+                                        </h:selectOneMenu>
+                                    </h:panelGrid>  
+                                    <h3>Grade Point Average for Degree Indicated Above</h3>
+
+                                    GPA information should be entered exactly as it appears on your transcripts, 
+                                    using the grading scale from your university. Please do not attempt to convert 
+                                    your grading scale to any other scale. If you incorrectly convert your GPA, 
+                                    it may result in the deferral of your application. For some countries, 
+                                    which use Division or Class (such as India or Pakistan), you should enter 
+                                    the final overall percentage from your courses. If you do not have your 
+                                    transcripts, please estimate your GPA as accurately as possible.
+
+                                    <h:panelGrid columns="2">
+                                        <h:outputLabel for="countrygranted" 
+                                                       value="Country Degree was Granted" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="countrygrant" value="1">
+                                            <f:selectItem id="country1" itemLabel="Select a Country" itemValue="1" />
+                                            <f:selectItem id="country2" itemLabel="Nepal" itemValue="2" />
+                                            <f:selectItem id="country3" itemLabel="Vietnam" itemValue="3" />
+                                            <f:selectItem id="country4" itemLabel="Ethopia" itemValue="4" />
+                                            <f:selectItem id="country5" itemLabel="Iran" itemValue="5" />
+                                        </h:selectOneMenu>
+                                        <h:outputLabel for="scaleused" 
+                                                       value="Grading Scale Used:" 
+                                                       styleClass="optionalLbl"/>
+                                        <h:selectOneMenu id="gradescale" value="1">
+                                            <f:selectItem id="grade1" itemLabel="Select a Grade Scale" itemValue="1" />
+                                            <f:selectItem id="grade2" itemLabel="F to A(A is best)" itemValue="2" />
+                                            <f:selectItem id="grade3" itemLabel="0 to 4(4 is best)" itemValue="3" />
+                                            <f:selectItem id="grade4" itemLabel="0 to 5(5 is best)" itemValue="4" />
+                                            <f:selectItem id="grade5" itemLabel="5 to 1(1 is best)" itemValue="5" />
+                                            <f:selectItem id="grade6" itemLabel="0 to 10(10 is best)" itemValue="5" />
+                                            <f:selectItem id="grade7" itemLabel="0 to 20(20 is best)" itemValue="5" />
+                                            <f:selectItem id="grade8" itemLabel="0 to 100(100 is best)" itemValue="5" />
+                                        </h:selectOneMenu>
+
+                                        <h:outputLabel for="personalgrade" 
+                                                       value="This MUST be in the range of the selected scale above!" 
+                                                       styleClass="requiredLbl"/>
+                                        <h:inputText id="personalgrade" 
+                                                     label="This MUST be in the range of the selected scale above!" 
+                                                     size="5"
+                                                     required="true"/>
+                                    </h:panelGrid>   
+
+                                </p:panel>
+                            </p:tab>
+
+                            <!-- Programming Experience -->
+                            <p:tab title="Programming Experience" id="proExpr">
+                                <p:panel header="Programming Experience">
+
+                                </p:panel>
+                            </p:tab>
+
+                            <!-- Confirmation -->
+                            <p:tab title="Application Form Information Agreement" id="confirmation">
+                                <p:panel header="Application Form Information Agreement">
+                                    <p:messages/>
+                                    <h3>  I hereby certify that all of the information provided in this form is true and accurate, 
+                                        and I further certify that I have carefully read the entire agreement and agree to 
+                                        all provisions</h3>
+
+                                    <h:panelGrid columns="1">
+                                        <h:inputText id="personalsinature" 
+
+                                                     required="true"/>
+                                        <h3>  "Your typed name counts as your Signature"</h3>
+                                        <br>  <br> <input type="submit" value="Clear" name="button1" />
+                                                <input type="submit" value="Submit" name="button2" />
+                                            </br>  </br> 
+                                        <br><br>
+                                                IMPORTANT NOTE: You will receive a confirmation email when your application is received. If you do not receive 
+                                                this confirmation email, either you have given us an incorrect email address, or there has been a network failure. 
+                                                In either case, you will have to reapply. Please check your e-mail within 10 days of submitting your application 
+                                                because you will be receiving instructions for further processing of your application. Please click the "Submit" 
+                                                button only once. If you do not see a JavaScript alert, then your data is being sent. 
+                                                Please wait online until a confirmation screen appears.
+                                            </br>
+                                        </br>
+                                    </h:panelGrid>
+                                </p:panel>
+                            </p:tab>
+                        </p:wizard>                   
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

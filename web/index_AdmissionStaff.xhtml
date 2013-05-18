@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+      <ui:composition template="./template.xhtml">
+        <ui:define name="top">
+            <h2>
+                <span style="font-size: 14pt;">
+                    Maharishi University of Management</span><br/>
+                <span style="font-size: 8pt;">
+                    Fairfield, Iowa, USA</span><br/>
+                <span style="font-size: 22pt; font-family: 'Arial Narrow';">
+                    Computer Professionals Program</span><br/>
+                <span style="font-size: 15pt; font-family: 'Arial'">
+                    Master of Science in Computer Science Cooperative Program</span>
+            </h2>
+        </ui:define>
+
+        <ui:define name="content">
+            <h:form>
+                <p:messages/>
+                <p:panel header="Welcome to the Computer Professionals Program Admission Page">
+                    <h:panelGrid columns="1">
+                        <p:commandButton 
+                            value="Query DB for Applicant " 
+                            action ="queryDBforApplicant" 
+                            ajax="false"/>
+                        <p:commandButton 
+                            value="Query DB for Application Status" 
+                            action ="queryDBforApplicationStatus" 
+                            ajax="false"/>
+                        <p:commandButton 
+                            value="Override System Disposition " 
+                            action ="overrideSysDisp" 
+                            ajax="false"/>
+                        <p:commandButton 
+                            value="Reset Application" 
+                            action ="resetApplication" 
+                            ajax="false"/>
+                        
+                        <h:panelGroup/>
+                        
+                    </h:panelGrid>
+                </p:panel>
+            </h:form>
+        </ui:define> 
+    </ui:composition>
+</html>
+
